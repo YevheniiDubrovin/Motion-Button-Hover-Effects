@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap");
+
+
+:root {
+    --first-color: hsl(217, 75%, 80%);
+    --body-color: hsl(211, 100%, 95%);
+    --body-family: 'Montserrat Alternates', sans-serif;
+    --body-font: 1.25rem;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    font-family: var(--body-family);
+    font-size: var(--body-font);
+    background: var(--body-color);
+}
+
+a{
+    text-decoration: none;
+   
+}
+
+.btn {
+    position: relative;
+    background: var(--first-color);
+    /* text-transform: uppercase; */
+    color: #fff;
+    padding: .9rem 2.2rem;
+    border-radius: 3rem;
+    transition: .4s;
+}
+
+.btn::after {
+    content: '';
+    width: 80%;
+    height: 40%;
+    background: linear-gradient(80deg,
+                hsl(217, 80%, 80%) 10%,
+                hsl(217,85%, 70%) 48%);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    margin: 0 auto;
+    border-radius: 3rem;
+    filter: blur(13px);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .4s;
+}
+
+.btn-text {
+    z-index: 10;
+    position: relative;
+}
+
+.btn img {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    pointer-events: none;
+    transition: .6s;
+    opacity: 0;
+}
+
+.btn-cone {
+    width: 18px;
+    transform: translate(-25px, -6px) rotate(55deg);
+    filter: blur(.5px);
+}
+
+.btn-torus {
+    width: 38px;
+    transform: translate(7px, -14px) rotate(80deg);
+
+}
+
+.btn-cosahedron {
+    width: 36px;
+    transform: translate(34px, -4px) rotate(-45deg);
+    filter: blur(.9px);
+}
+
+.btn-sphere {
+    width: 30px;
+    transform: translate(-5px, 15px) rotate(40deg);
+}
+
+.btn:hover:after {
+    opacity: 1;
+}
+
+.btn:hover {
+    transform: scale(1.3);
+}
+
+.btn:hover img {
+    opacity: 1;
+}
+
+.btn:hover .btn-cone {
+    transform: translate(-38px, -10px) scale(1.2);
+}
+.btn:hover .btn-torus {
+    transform: translate(7px, -32px) scale(1.1);
+}
+.btn:hover .btn-cosahedron {
+    transform: translate(50px, -20px) scale(1.1);
+}
+.btn:hover .btn-sphere {
+    transform: translate(-14px, 20px) scale(1.2);
+}
